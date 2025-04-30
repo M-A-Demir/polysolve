@@ -3,8 +3,22 @@ import numpy as np
 CBRT_UNITY_IM = np.sqrt(3)/2 * 1j
 
 
-def quadratic_solve(a, b, c):
+def quadratic_solve(a: float, b: float, c: float) -> tuple[float, float]:
+    '''
+    Solves the roots of a quadratic equation.
+    Uses the quadratic formula. 
+    
+    Examples
+    --------
+    >>> quadratic_solve(1., 0., 0.)
+    (0.0, -0.0)
+    >>> quadratic_solve(3., 0., -1.)
+    (0.5773502691896257, -0.5773502691896257)
+
+    '''
+
     det = b**2 - (4*a*c)
+
 
     return ((-b + np.sqrt(det)) / (2*a),
             (-b - np.sqrt(det)) / (2*a))
